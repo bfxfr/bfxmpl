@@ -1,1 +1,11 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% set page_title = "Menu de l'application budget" %}
+
+ {% block body %}
+     <div id="menu_budget">
+         <ul>
+             <li><a href="{{ url('comptebancaire') }}">Création de compte bancaire</a></li>
+         </ul>
+     </div>
+ {% endblock %}

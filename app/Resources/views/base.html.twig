@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}BfxMpl{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/bfxmplbudget/css/main.css') }}" type="text/css" rel="stylesheet"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+
+    {% block header %}
+        <div id="bloc_header" class="clearfix">
+            <h1 id="header_text">{% if page_title is defined %} {{ page_title }} {% endif %}</h1>
+            <span id="header_img">
+                <a href="{{ url('bfxmpl_budget_default_index') }}" >
+                    <img src="{{ asset('bundles/bfxmplbudget/images/logo.jpg') }}" alt="Logo BfxMpl"/>
+                </a>
+            </span>
+
+        </div>
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</body>
 </html>

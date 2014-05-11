@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% set page_title = "Création de Compte Bancaire" %}
+
+{% block body -%}
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('comptebancaire') }}">
+            Retour à liste des comptes
+        </a>
+    </li>
+</ul>
+{% endblock %}

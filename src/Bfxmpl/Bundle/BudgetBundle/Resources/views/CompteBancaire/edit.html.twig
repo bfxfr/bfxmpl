@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% set page_title = "Modification de Compte Bancaire" %}
+
+{% block body -%}
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('comptebancaire') }}">
+            Retour à liste des comptes
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
