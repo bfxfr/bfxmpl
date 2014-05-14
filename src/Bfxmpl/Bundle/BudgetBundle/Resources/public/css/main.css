@@ -1,5 +1,5 @@
 /***** Général *****/
-body {
+/*body {
     background-color: #A1AB4B;
     color: white;
 }
@@ -30,7 +30,7 @@ html[xmlns] .clearfix {display: block;}
 
 
 /***** Header *****/
-#header_img {
+/*#header_img {
     position: relative;
     float: left;
 }
@@ -44,7 +44,7 @@ html[xmlns] .clearfix {display: block;}
 
 
 /***** Body *****/
-#menu_budget {
+/*#menu_budget {
     position: relative;
 }
 
@@ -52,7 +52,7 @@ html[xmlns] .clearfix {display: block;}
 
 
 /***** Entity List *****/
-.records_list {
+/*.records_list {
     width: 100%;
     padding: 1rem;
     border-collapse: collapse;

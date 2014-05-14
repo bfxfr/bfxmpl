@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8"/>
     <title>{% block title %}BfxMpl{% endblock %}</title>
+    {% block boostrap %}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <!-- Mobile first -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
     {% block stylesheets %}
         <link href="{{ asset('bundles/bfxmplbudget/css/main.css') }}" type="text/css" rel="stylesheet"/>
     {% endblock %}
@@ -11,14 +24,15 @@
 <body>
 
     {% block header %}
-        <div id="bloc_header" class="clearfix">
-            <h1 id="header_text">{% if page_title is defined %} {{ page_title }} {% endif %}</h1>
-            <span id="header_img">
+        <div id="bloc_header" class="row">
+            <div class="col-md-2">
                 <a href="{{ url('bfxmpl_budget_default_index') }}" >
                     <img src="{{ asset('bundles/bfxmplbudget/images/logo.jpg') }}" alt="Logo BfxMpl"/>
                 </a>
-            </span>
-
+            </div>
+            <div class="col-md-10 text-center">
+                <h1 id="h1">{% if page_title is defined %} {{ page_title }} {% endif %}</h1>
+            </div>
         </div>
     {% endblock %}
 
