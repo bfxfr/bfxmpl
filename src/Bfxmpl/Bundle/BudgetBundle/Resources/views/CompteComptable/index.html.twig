@@ -2,16 +2,18 @@
 
 {% set page_title = "Liste des Comptes Comptables" %}
 
+{% import 'BfxmplBudgetBundle:Macro:crud.html.twig' as macrocrud %}
+
 {% block body -%}
     <div class="table-responsive">
         <table class="records_list table table-striped">
             <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Numero</th>
-                    <th>Libelle</th>
-                    <th>Actions</th>
-                </tr>
+            <tr>
+                <th>Id</th>
+                <th>Numero</th>
+                <th>Libelle</th>
+                <th>Actions</th>
+            </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
@@ -20,25 +22,20 @@
                     <td>{{ entity.numero }}</td>
                     <td>{{ entity.libelle }}</td>
                     <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('comptecomptable_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('comptecomptable_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                        <ul class="list-inline">
+                            <li>
+                                {{ macrocrud.link_show( path('comptecomptable_show', { 'id': entity.id }) ) }}
+                            </li>
+                            <li>
+                                {{ macrocrud.link_edit( path('comptecomptable_edit', { 'id': entity.id }) ) }}
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-        <ul>
-        <li>
-            <a href="{{ path('comptecomptable_new') }}">
-                Créer un nouveau compte
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+
+    {{ macrocrud.link_new( path('comptecomptable_new') ) }}
+{% endblock %}

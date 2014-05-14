@@ -1,0 +1,17 @@
+{% macro link_new(link) %}
+    <a class="btn btn-default btn-primary" role="button" href="{{ link }}">
+        <span class="glyphicon glyphicon-plus"/> Nouveau
+    </a>
+{% endmacro %}
+
+{% macro link_show(link) %}
+    <a class="btn btn-default btn-primary" role="button" href="{{ link }}">
+        <span class="glyphicon glyphicon-eye-open"/>
+    </a>
+{% endmacro %}
+
+{% macro link_edit(link) %}
+    <a class="btn btn-default btn-primary" role="button" href="{{ link }}">
+        <span class="glyphicon glyphicon-pencil"/>
+    </a>
+{% endmacro %}

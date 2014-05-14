@@ -16,28 +16,26 @@
         <!-- Mobile first -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
-    {% block stylesheets %}
-        <link href="{{ asset('bundles/bfxmplbudget/css/main.css') }}" type="text/css" rel="stylesheet"/>
-    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-
-    {% block header %}
-        <div id="bloc_header" class="row">
-            <div class="col-md-2">
-                <a href="{{ url('bfxmpl_budget_default_index') }}" >
-                    <img src="{{ asset('bundles/bfxmplbudget/images/logo.jpg') }}" alt="Logo BfxMpl"/>
-                </a>
+    <div class="container-fluid">
+        {% block header %}
+            <div id="bloc_header" class="row">
+                <div class="col-md-2">
+                    <a href="{{ url('bfxmpl_budget_default_index') }}">
+                        <img src="{{ asset('bundles/bfxmplbudget/images/logo.jpg') }}" alt="Logo BfxMpl"/>
+                    </a>
+                </div>
+                <div class="col-md-10 text-center">
+                    <h1 id="h1">{% if page_title is defined %} {{ page_title }} {% endif %}</h1>
+                </div>
             </div>
-            <div class="col-md-10 text-center">
-                <h1 id="h1">{% if page_title is defined %} {{ page_title }} {% endif %}</h1>
-            </div>
-        </div>
-    {% endblock %}
+        {% endblock %}
 
-    {% block body %}{% endblock %}
-    {% block footer %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </div>
 </body>
 </html>

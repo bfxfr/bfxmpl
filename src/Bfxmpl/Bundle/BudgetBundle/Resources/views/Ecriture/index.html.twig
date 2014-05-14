@@ -1,10 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Ecriture list</h1>
+{% set page_title = "Liste des Ecritures" %}
 
-    <table class="records_list">
-        <thead>
+{% import 'BfxmplBudgetBundle:Macro:crud.html.twig' as macrocrud %}
+
+{% block body -%}
+    <div class="table-responsive">
+        <table class="records_list table table-striped">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
@@ -13,35 +16,30 @@
                 <th>Sens</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('ecriture_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.libelle }}</td>
-                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.montant }}</td>
-                <td>{{ entity.sens }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('ecriture_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('ecriture_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('ecriture_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.libelle }}</td>
+                    <td>{% if entity.date %}{{ entity.date|date('d/m/Y') }}{% endif %}</td>
+                    <td>{{ entity.montant }}</td>
+                    <td>{{ entity.sens }}</td>
+                    <td>
+                        <ul class="list-inline">
+                            <li>
+                                {{ macrocrud.link_show( path('ecriture_show', { 'id': entity.id }) ) }}
+                            </li>
+                            <li>
+                                {{ macrocrud.link_edit( path('ecriture_edit', { 'id': entity.id }) ) }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-        <ul>
-        <li>
-            <a href="{{ path('ecriture_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    {{ macrocrud.link_new( path('ecriture_new') ) }}
+{% endblock %}
