@@ -1,15 +1,17 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Ecriture creation</h1>
+{% set page_title = "Création d'Ecriture" %}
 
+{% form_theme form with ['BfxmplBudgetBundle:Form:bootstrap-override.html.twig', 'BfxmplBudgetBundle:Form:bootstrap-form-horizontal.html.twig'] %}
+
+{% block body -%}
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ecriture') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('ecriture') }}">
+                Retour à la liste des comptes
+            </a>
+        </li>
+    </ul>
 {% endblock %}

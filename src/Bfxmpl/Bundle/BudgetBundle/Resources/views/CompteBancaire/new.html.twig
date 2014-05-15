@@ -2,6 +2,8 @@
 
 {% set page_title = "Création de Compte Bancaire" %}
 
+{% form_theme form with ['BfxmplBudgetBundle:Form:bootstrap-override.html.twig', 'BfxmplBudgetBundle:Form:bootstrap-form-horizontal.html.twig'] %}
+
 {% block body -%}
     {{ form(form) }}
 
