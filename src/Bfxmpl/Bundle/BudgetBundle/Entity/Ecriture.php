@@ -49,6 +49,17 @@ class Ecriture
      */
     private $sens;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire", inversedBy="ecritures")
+     * @ORM\JoinColumn(name="comptebancaire_id", referencedColumnName="id")
+     */
+    protected $compteBancaire;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable", inversedBy="ecritures")
+     * @ORM\JoinColumn(name="comptecomptable_id", referencedColumnName="id")
+     */
+    protected $compteComptable;
 
     /**
      * Get id
@@ -150,5 +161,51 @@ class Ecriture
     public function getSens()
     {
         return $this->sens;
+    }
+
+    /**
+     * Set compteBancaire
+     *
+     * @param \Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire $compteBancaire
+     * @return Ecriture
+     */
+    public function setCompteBancaire(\Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire $compteBancaire = null)
+    {
+        $this->compteBancaire = $compteBancaire;
+
+        return $this;
+    }
+
+    /**
+     * Get compteBancaire
+     *
+     * @return \Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire 
+     */
+    public function getCompteBancaire()
+    {
+        return $this->compteBancaire;
+    }
+
+    /**
+     * Set compteComptable
+     *
+     * @param \Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable $compteComptable
+     * @return Ecriture
+     */
+    public function setCompteComptable(\Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable $compteComptable = null)
+    {
+        $this->compteComptable = $compteComptable;
+
+        return $this;
+    }
+
+    /**
+     * Get compteComptable
+     *
+     * @return \Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable 
+     */
+    public function getCompteComptable()
+    {
+        return $this->compteComptable;
     }
 }
