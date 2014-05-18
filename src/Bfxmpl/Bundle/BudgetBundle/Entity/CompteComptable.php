@@ -2,6 +2,7 @@
 
 namespace Bfxmpl\Bundle\BudgetBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -101,7 +102,7 @@ class CompteComptable
      */
     public function __construct()
     {
-        $this->ecritures = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ecritures = new ArrayCollection();
     }
 
     /**
@@ -110,7 +111,7 @@ class CompteComptable
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures
      * @return CompteComptable
      */
-    public function addEcriture(\Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures)
+    public function addEcriture(Ecriture $ecritures)
     {
         $this->ecritures[] = $ecritures;
 
@@ -122,7 +123,7 @@ class CompteComptable
      *
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures
      */
-    public function removeEcriture(\Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures)
+    public function removeEcriture(Ecriture $ecritures)
     {
         $this->ecritures->removeElement($ecritures);
     }

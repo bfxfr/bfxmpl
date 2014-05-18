@@ -169,7 +169,7 @@ class Ecriture
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire $compteBancaire
      * @return Ecriture
      */
-    public function setCompteBancaire(\Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire $compteBancaire = null)
+    public function setCompteBancaire(CompteBancaire $compteBancaire = null)
     {
         $this->compteBancaire = $compteBancaire;
 
@@ -192,7 +192,7 @@ class Ecriture
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable $compteComptable
      * @return Ecriture
      */
-    public function setCompteComptable(\Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable $compteComptable = null)
+    public function setCompteComptable(CompteComptable $compteComptable = null)
     {
         $this->compteComptable = $compteComptable;
 

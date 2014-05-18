@@ -21,7 +21,7 @@ class CompteBancaireController extends Controller
     /**
      * Lists all CompteBancaire entities.
      *
-     * @Route("/budget", name="comptebancaire")
+     * @Route("/", name="comptebancaire")
      * @Method("GET")
      * @Template()
      */

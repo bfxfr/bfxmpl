@@ -2,6 +2,8 @@
 
 namespace Bfxmpl\Bundle\BudgetBundle\Entity;
 
+
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -109,7 +111,7 @@ class CompteBancaire
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures
      * @return CompteBancaire
      */
-    public function addEcriture(\Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures)
+    public function addEcriture(Ecriture $ecritures)
     {
         $this->ecritures[] = $ecritures;
 
@@ -121,7 +123,7 @@ class CompteBancaire
      *
      * @param \Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures
      */
-    public function removeEcriture(\Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture $ecritures)
+    public function removeEcriture(Ecriture $ecritures)
     {
         $this->ecritures->removeElement($ecritures);
     }
