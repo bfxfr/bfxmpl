@@ -4,17 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="bfxmpl_budget.example.class">Bfxmpl\Bundle\BudgetBundle\Example</parameter>
+        <parameter key="bfxmpl_budget.block.import.class">Bfxmpl\Bundle\BudgetBundle\Block\ImportBlockService</parameter>
     </parameters>
 
     <services>
-        <service id="bfxmpl_budget.example" class="%bfxmpl_budget.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="bfxmpl_budget.sonata.block.service.import" class="%bfxmpl_budget.block.import.class%">
+            <tag name="sonata.block" />
+            <argument>sonata.block.service.import</argument>
+            <argument type="service" id="templating" />
         </service>
     </services>
-    -->
 </container>
