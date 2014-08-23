@@ -3,7 +3,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="sonata.admin.comptebancaire" class="Bfxmpl\Bundle\BudgetBundle\Admin\CompteBancaireAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Contenu" label="Compte Bancaire"/>
+            <tag name="sonata.admin" manager_type="orm" group="Budget" label="Compte Bancaire"/>
             <argument />
             <argument>Bfxmpl\Bundle\BudgetBundle\Entity\CompteBancaire</argument>
             <argument />
@@ -12,7 +12,7 @@
             </call>
         </service>
         <service id="sonata.admin.comptecomptable" class="Bfxmpl\Bundle\BudgetBundle\Admin\CompteComptableAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Contenu" label="Compte Comptable"/>
+            <tag name="sonata.admin" manager_type="orm" group="Budget" label="Compte Comptable"/>
             <argument />
             <argument>Bfxmpl\Bundle\BudgetBundle\Entity\CompteComptable</argument>
             <argument />
@@ -21,9 +21,18 @@
             </call>
         </service>
         <service id="sonata.admin.ecriture" class="Bfxmpl\Bundle\BudgetBundle\Admin\EcritureAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Contenu" label="Ecriture"/>
+            <tag name="sonata.admin" manager_type="orm" group="Budget" label="Ecriture"/>
             <argument />
             <argument>Bfxmpl\Bundle\BudgetBundle\Entity\Ecriture</argument>
+            <argument />
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.csvfile" class="Bfxmpl\Bundle\BudgetBundle\Admin\CSVFileAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Import" label="Fichier CSV"/>
+            <argument />
+            <argument>Bfxmpl\Bundle\BudgetBundle\Entity\CSVFile</argument>
             <argument />
             <call method="setTranslationDomain">
                 <argument>SonataAdminBundle</argument>

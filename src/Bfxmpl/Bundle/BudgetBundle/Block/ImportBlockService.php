@@ -70,6 +70,8 @@ class ImportBlockService extends BaseBlockService
         $resolver->setDefaults($settings);
         $settings = $resolver->resolve($block->getSettings());
 
+        //
+
 
         return $this->renderResponse($blockContext->getTemplate(), array(
             'block'     => $blockContext->getBlock(),
