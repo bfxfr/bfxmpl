@@ -53,4 +53,4 @@ class EcritureAdmin extends Admin
             ->add('compteComptable')
         ;
     }
-} 
+}

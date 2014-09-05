@@ -41,4 +41,4 @@ class CompteComptableAdmin extends Admin
             ->add('libelle')
         ;
     }
-} 
+}

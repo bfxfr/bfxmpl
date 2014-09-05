@@ -41,4 +41,4 @@ class CompteBancaireAdmin extends Admin
             ->add('banque')
         ;
     }
-} 
+}
